@@ -1,11 +1,17 @@
 @import "../variables"
 
+.inner
+  padding: 0 20px
+  background-color: $c-inner-background
+
 .item
   margin: 10px
   display: flex
   justify-content: center
   align-items: center
   background-color: $c-placeholder
+  background-position: 50%
+  background-size: cover
 
 .large
   flex-basis: calc(50% - 20px)
@@ -13,7 +19,7 @@
 
 .small
   flex-basis: calc(33.333333% - 20px)
-  min-height: 240px
+  min-height: 270px
 
 .title
   font-weight: 400
