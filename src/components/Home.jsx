@@ -1,45 +1,37 @@
-import React from 'react'
-import classNames from 'classnames'
+import React, { Component } from 'react'
+import ListItem from './ListItem'
+import uuid from 'uuid'
 import styles from './Home.module.sass'
 
-function Home () {
-  return (
-    <main className={styles.home}>
-      <section className={styles.upper}>
-        <ul className={styles.list}>
-          <li className={classNames(styles.item, styles.small)}>
-            <div className={styles.inner}>
-              <h2 className={styles.title}>Hats</h2>
-            </div>
-          </li>
+class Home extends Component {
+  constructor () {
+    super()
+    this.state = {
+      items: ['Hats', 'Jackets', 'Sneakers', 'Mens', 'Womens'].map(
+        (title, index) => {
+          return {
+            id: uuid.v4(),
+            isLarge: index > 2,
+            title
+          }
+        }
+      )
+    }
+  }
 
-          <li className={classNames(styles.item, styles.small)}>
-            <div className={styles.inner}>
-              <h2 className={styles.title}>Jackets</h2>
-            </div>
-          </li>
-
-          <li className={classNames(styles.item, styles.small)}>
-            <div className={styles.inner}>
-              <h2 className={styles.title}>Sneakers</h2>
-            </div>
-          </li>
-
-          <li className={classNames(styles.item, styles.large)}>
-            <div className={styles.inner}>
-              <h2 className={styles.title}>Womens</h2>
-            </div>
-          </li>
-
-          <li className={classNames(styles.item, styles.large)}>
-            <div className={styles.inner}>
-              <h2 className={styles.title}>Mens</h2>
-            </div>
-          </li>
-        </ul>
-      </section>
-    </main>
-  )
+  render () {
+    return (
+      <main className={styles.component}>
+        <section className={styles.upper}>
+          <ul className={styles.list}>
+            {this.state.items.map(item => (
+              <ListItem item={item} key={item.id} />
+            ))}
+          </ul>
+        </section>
+      </main>
+    )
+  }
 }
 
 export default Home
