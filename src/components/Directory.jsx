@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import List from './List'
-import styles from './Home.module.sass'
+import styles from './Directory.module.sass'
 import uuid from 'uuid'
 
-class Home extends Component {
+class Directory extends Component {
   constructor () {
     super()
     this.state = {
@@ -45,13 +45,11 @@ class Home extends Component {
   render () {
     const { items } = this.state
     return (
-      <main className={styles.component}>
-        <section className={styles.upper}>
-          <List items={items} />
-        </section>
-      </main>
+      <section className={styles.upper}>
+        <List items={items} />
+      </section>
     )
   }
 }
 
-export default Home
+export default Directory

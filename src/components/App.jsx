@@ -1,8 +1,8 @@
 import React from 'react'
-import Home from './Home'
+import Inner from './Inner'
 
 function App () {
-  return <Home />
+  return <Inner />
 }
 
 export default App
