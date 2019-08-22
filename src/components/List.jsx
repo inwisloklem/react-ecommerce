@@ -6,9 +6,8 @@ import styles from './List.module.sass'
 function List ({ items }) {
   return (
     <ul className={styles.list}>
-      {items.map(item => {
-        const { id } = item
-        return <ListItem item={item} key={id} />
+      {items.map(({ id, ...otherProps }) => {
+        return <ListItem key={id} {...otherProps} />
       })}
     </ul>
   )
