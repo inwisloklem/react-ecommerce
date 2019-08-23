@@ -5,7 +5,7 @@ import pathJoin from '../pathJoin'
 import PropTypes from 'prop-types'
 import styles from './CollectionsList.module.sass'
 
-function CollectionsList ({ collections, match, routeName }) {
+function CollectionsList ({ collections, match }) {
   return (
     <ul className={styles.collections}>
       {collections.map(({ id, routeName, title, items }) => (
@@ -15,10 +15,13 @@ function CollectionsList ({ collections, match, routeName }) {
               {title}
             </Link>
           </h2>
+
           <ul className={styles.list}>
-            {items.map(({ id, ...otherProps }) => (
-              <CollectionsItem key={id} {...otherProps} />
-            ))}
+            {items
+              .filter((_, index) => index < 4)
+              .map(({ id, ...otherProps }) => (
+                <CollectionsItem key={id} {...otherProps} />
+              ))}
           </ul>
         </li>
       ))}
@@ -28,8 +31,7 @@ function CollectionsList ({ collections, match, routeName }) {
 
 CollectionsList.propTypes = {
   collections: PropTypes.array.isRequired,
-  match: PropTypes.object.isRequired,
-  routeName: PropTypes.string.isRequired
+  match: PropTypes.object.isRequired
 }
 
 export default withRouter(CollectionsList)

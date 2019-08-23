@@ -11,7 +11,7 @@ function SectionsItem ({ image, isLarge, match, routeName, title }) {
       className={classNames(styles.item, styles[isLarge ? 'large' : 'small'])}
       style={{ backgroundImage: `url(${image})` }}
     >
-      <Link className={styles.outer} to={pathJoin(match.url, routeName)}>
+      <Link className={styles.outer} to={pathJoin(match.url, 'shop', routeName)}>
         <div className={styles.inner}>
           <h2 className={styles.title}>{title}</h2>
         </div>

@@ -10,9 +10,14 @@ function CollectionsItem ({ image, name, price, routeName }) {
           className={styles.image}
           style={{ backgroundImage: `url(${image})` }}
         />
+        <div className={styles.inner}>
+          <button className={styles.button} type='button'>
+            Add to cart
+          </button>
+        </div>
       </div>
 
-      <div className={styles.inner}>
+      <div className={styles.info}>
         <h3 className={styles.name}>{name}</h3>
         <span className={styles.price}>${price}</span>
       </div>

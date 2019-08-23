@@ -1,0 +1,18 @@
+@import "../variables"
+
+.link
+  font-weight: 700
+  font-size: 18px
+  color: inherit
+  text-decoration: none
+  text-transform: uppercase
+  border-bottom: solid 2px transparent
+
+  &:global(.active)
+    border-bottom-color: $c-app-text
+
+  &:not(:last-of-type)
+    margin-right: 20px
+
+.list
+  margin-bottom: 40px

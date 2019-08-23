@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import SectionsList from './SectionsList'
 import sections from './sections'
-import styles from './Home.module.sass'
 
 class Home extends Component {
   constructor () {
@@ -16,7 +15,7 @@ class Home extends Component {
     const { sections } = this.state
 
     return (
-      <section className={styles.upper}>
+      <section>
         <SectionsList sections={sections} />
       </section>
     )

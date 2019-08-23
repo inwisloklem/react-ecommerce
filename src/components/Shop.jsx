@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import CollectionsList from './CollectionsList'
 import collections from './collections'
-import styles from './Shop.module.sass'
 
 class Shop extends Component {
   constructor () {
@@ -14,7 +13,7 @@ class Shop extends Component {
 
   render () {
     return (
-      <section className={styles.upper}>
+      <section>
         <CollectionsList collections={collections} />
       </section>
     )
