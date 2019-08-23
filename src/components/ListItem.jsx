@@ -1,31 +1,29 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import styles from './ListItem.module.sass'
 
-function ListItem ({ history, isLarge, image, link, match, title }) {
-  const handleClick = () => history.push(match.url + link)
-
+function ListItem ({ image, isLarge, match, routeName, title }) {
   return (
     <li
       className={classNames(styles.item, styles[isLarge ? 'large' : 'small'])}
       style={{ backgroundImage: `url(${image})` }}
-      onClick={handleClick}
     >
-      <div className={styles.inner}>
-        <h2 className={styles.title}>{title}</h2>
-      </div>
+      <Link className={styles.outer} to={match.url + routeName}>
+        <div className={styles.inner}>
+          <h2 className={styles.title}>{title}</h2>
+        </div>
+      </Link>
     </li>
   )
 }
 
 ListItem.propTypes = {
-  history: PropTypes.object,
-  isLarge: PropTypes.bool,
   image: PropTypes.string,
+  isLarge: PropTypes.bool,
   match: PropTypes.object,
-  link: PropTypes.string,
+  routeName: PropTypes.string,
   title: PropTypes.string.isRequired
 }
 
