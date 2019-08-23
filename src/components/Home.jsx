@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import List from './List'
+import SectionsList from './SectionsList'
 import sections from './sections'
 import styles from './Home.module.sass'
 
@@ -17,7 +17,7 @@ class Home extends Component {
 
     return (
       <section className={styles.upper}>
-        <List items={sections} />
+        <SectionsList sections={sections} />
       </section>
     )
   }

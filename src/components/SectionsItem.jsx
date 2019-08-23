@@ -1,16 +1,17 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import classNames from 'classnames'
+import pathJoin from '../pathJoin'
 import PropTypes from 'prop-types'
-import styles from './ListItem.module.sass'
+import styles from './SectionsItem.module.sass'
 
-function ListItem ({ image, isLarge, match, routeName, title }) {
+function SectionsItem ({ image, isLarge, match, routeName, title }) {
   return (
     <li
       className={classNames(styles.item, styles[isLarge ? 'large' : 'small'])}
       style={{ backgroundImage: `url(${image})` }}
     >
-      <Link className={styles.outer} to={match.url + routeName}>
+      <Link className={styles.outer} to={pathJoin(match.url, routeName)}>
         <div className={styles.inner}>
           <h2 className={styles.title}>{title}</h2>
         </div>
@@ -19,7 +20,7 @@ function ListItem ({ image, isLarge, match, routeName, title }) {
   )
 }
 
-ListItem.propTypes = {
+SectionsItem.propTypes = {
   image: PropTypes.string,
   isLarge: PropTypes.bool,
   match: PropTypes.object,
@@ -27,4 +28,4 @@ ListItem.propTypes = {
   title: PropTypes.string.isRequired
 }
 
-export default withRouter(ListItem)
+export default withRouter(SectionsItem)

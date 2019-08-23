@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import CollectionsList from './CollectionsList'
 import collections from './collections'
 import styles from './Shop.module.sass'
 
@@ -13,9 +14,9 @@ class Shop extends Component {
 
   render () {
     return (
-      <pre className={styles.pre}>
-        {JSON.stringify(this.state.collections, undefined, 4)}
-      </pre>
+      <section className={styles.upper}>
+        <CollectionsList collections={collections} />
+      </section>
     )
   }
 }
