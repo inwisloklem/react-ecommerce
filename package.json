@@ -46,7 +46,8 @@
     ],
     "plugins": [
       "html"
-    ]
+    ],
+    "parser": "babel-eslint"
   },
   "scripts": {
     "build": "react-scripts build",

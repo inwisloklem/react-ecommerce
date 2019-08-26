@@ -15,9 +15,7 @@ class Home extends Component {
     const { sections } = this.state
 
     return (
-      <section>
-        <SectionsList sections={sections} />
-      </section>
+      <SectionsList sections={sections} />
     )
   }
 }

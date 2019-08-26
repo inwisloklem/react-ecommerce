@@ -12,6 +12,10 @@ function Header () {
       <NavLink className={styles.link} exact to='/shop'>
         Shop
       </NavLink>
+
+      <NavLink className={styles.link} exact to='/signin'>
+        Sign In
+      </NavLink>
     </nav>
   )
 }
