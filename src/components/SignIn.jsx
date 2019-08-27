@@ -1,20 +1,19 @@
 import React, { Component } from 'react'
-import classNames from 'classnames'
+import Button from './Button'
 import styles from './SignIn.module.sass'
+
+const initialState = {
+  email: '',
+  password: ''
+}
 
 class SignIn extends Component {
   constructor () {
     super()
-
-    this.state = {
-      email: '',
-      password: ''
-    }
+    this.state = initialState
   }
 
-  handleChange = e => {
-    const { name, value } = e.target
-
+  handleChange = ({ target: { name, value } }) => {
     this.setState({
       [name]: value
     })
@@ -22,11 +21,7 @@ class SignIn extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-
-    this.setState({
-      email: '',
-      password: ''
-    })
+    this.setState(initialState)
   }
 
   render () {
@@ -51,16 +46,11 @@ class SignIn extends Component {
         />
 
         <div className={styles.buttons}>
-          <button className={styles.button} type='submit'>
+          <Button type='submit' onClick={this.handleSubmit}>
             Sign In
-          </button>
+          </Button>
 
-          <button
-            className={classNames(styles.button, styles.buttonGoogle)}
-            type='submit'
-          >
-            Sign In Google
-          </button>
+          <Button isGoogle>Sign In Google</Button>
         </div>
       </form>
     )

@@ -1,17 +1,74 @@
 import React, { Component } from 'react'
+import Button from './Button'
 import styles from './SignUp.module.sass'
 
+const initialState = {
+  displayName: '',
+  email: '',
+  password: '',
+  confirmPassword: ''
+}
+
 class SignUp extends Component {
+  constructor () {
+    super()
+    this.state = initialState
+  }
+
+  handleChange = e => {
+    const { name, value } = e.target
+
+    this.setState({
+      [name]: value
+    })
+  }
+
+  handleSubmit = e => {
+    e.preventDefault()
+    this.setState(initialState)
+  }
+
   render () {
     return (
-      <form>
-        <input className={styles.input} type='text' placeholder='Display Name' />
-        <input className={styles.input} type='email' placeholder='Email' />
-        <input className={styles.input} type='password' placeholder='Password' />
-        <input className={styles.input} type='password' placeholder='Confirm Password' />
+      <form onSubmit={this.handleSubmit}>
+        <input
+          className={styles.input}
+          name='displayName'
+          type='text'
+          placeholder='Display Name'
+          value={this.state.displayName}
+          onChange={this.handleChange}
+        />
+
+        <input
+          className={styles.input}
+          name='email'
+          type='email'
+          placeholder='Email'
+          value={this.state.email}
+          onChange={this.handleChange}
+        />
+
+        <input
+          className={styles.input}
+          name='password'
+          type='password'
+          placeholder='Password'
+          value={this.state.password}
+          onChange={this.handleChange}
+        />
+
+        <input
+          className={styles.input}
+          name='confirmPassword'
+          type='password'
+          placeholder='Confirm Password'
+          value={this.state.confirmPassword}
+          onChange={this.handleChange}
+        />
 
         <div className={styles.buttons}>
-          <button className={styles.button} type='submit'>Sign Up</button>
+          <Button type='submit'>SignUp</Button>
         </div>
       </form>
     )
