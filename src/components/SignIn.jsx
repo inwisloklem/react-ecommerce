@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { signInGoogle } from '../firebase'
 import Button from './Button'
 import styles from './SignIn.module.sass'
 
@@ -50,7 +51,7 @@ class SignIn extends Component {
             Sign In
           </Button>
 
-          <Button isGoogle>Sign In Google</Button>
+          <Button isGoogle onClick={signInGoogle}>Sign In Google</Button>
         </div>
       </form>
     )
