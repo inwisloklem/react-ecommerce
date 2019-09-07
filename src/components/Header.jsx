@@ -1,10 +1,22 @@
 import React from 'react'
+import { auth } from '../firebase'
 import { NavLink } from 'react-router-dom'
 import styles from './Header.module.sass'
 
 function Header ({ currentUser }) {
-  if (!currentUser) {
-    return null
+  const renderSignInOut = () => {
+    if (currentUser) {
+      return (
+        <button className={styles.button} onClick={() => auth.signOut()}>
+          Sign Out
+        </button>
+      )
+    }
+    return (
+      <NavLink className={styles.link} exact to='/signin'>
+        Sign In
+      </NavLink>
+    )
   }
 
   return (
@@ -18,22 +30,17 @@ function Header ({ currentUser }) {
           Shop
         </NavLink>
 
-        <NavLink className={styles.link} exact to='/signin'>
-          Sign In
-        </NavLink>
+        {renderSignInOut()}
       </nav>
-
-      <div className={styles.info}>{currentUser.email}</div>
     </div>
   )
 }
 
 Header.propTypes = {
   currentUser (props, propName, componentName) {
-    if (typeof props[propName] === 'object') {
-      return
-    }
-    return new Error(`${componentName} only accepts object or null`)
+    return typeof props[propName] === 'object'
+      ? undefined
+      : new Error(`${componentName} only accepts object or null`)
   }
 }
 

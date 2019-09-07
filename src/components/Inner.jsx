@@ -19,9 +19,7 @@ class Inner extends Component {
 
   componentDidMount () {
     this.unsubscribeAuth = auth.onAuthStateChanged(user => {
-      const { email } = user
       this.setState({ currentUser: user })
-      console.info(email)
     })
   }
 

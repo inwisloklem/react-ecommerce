@@ -1,15 +1,11 @@
 @import "../variables"
 
-.info
-  margin-left: 20px
-  font-weight: 700
-  font-size: 18px
-  text-transform: uppercase
-  color: $c-input-placeholder
+.button
+  padding: 0
+  border: none
+  cursor: pointer
 
-.inner
-  display: flex
-
+.button,
 .link
   font-weight: 700
   font-size: 18px
@@ -21,8 +17,18 @@
   &:global(.active)
     border-bottom-color: $c-app-text
 
-  &:not(:last-of-type)
+  &:not(:last-child)
     margin-right: 20px
+
+.info
+  margin-left: 20px
+  font-weight: 700
+  font-size: 18px
+  text-transform: uppercase
+  color: $c-input-placeholder
+
+.inner
+  display: flex
 
 .list
   display: flex

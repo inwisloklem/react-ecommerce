@@ -26,6 +26,8 @@ class SignIn extends Component {
   }
 
   render () {
+    const { email, password } = this.state
+
     return (
       <form onSubmit={this.handleSubmit}>
         <input
@@ -33,7 +35,7 @@ class SignIn extends Component {
           name='email'
           placeholder='Email'
           type='email'
-          value={this.state.email}
+          value={email}
           onChange={this.handleChange}
         />
 
@@ -42,7 +44,7 @@ class SignIn extends Component {
           name='password'
           placeholder='Password'
           type='password'
-          value={this.state.password}
+          value={password}
           onChange={this.handleChange}
         />
 
@@ -51,7 +53,9 @@ class SignIn extends Component {
             Sign In
           </Button>
 
-          <Button isGoogle onClick={signInGoogle}>Sign In Google</Button>
+          <Button isGoogle onClick={signInGoogle}>
+            Sign In Google
+          </Button>
         </div>
       </form>
     )

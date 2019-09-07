@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './CollectionsItem.module.sass'
 
-function CollectionsItem ({ image, name, price, routeName }) {
+function CollectionsItem ({ image, name, price }) {
   return (
     <li className={styles.item}>
       <div className={styles.outer}>
@@ -28,8 +28,7 @@ function CollectionsItem ({ image, name, price, routeName }) {
 CollectionsItem.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string,
-  price: PropTypes.number,
-  routeName: PropTypes.string
+  price: PropTypes.number
 }
 
 export default CollectionsItem
