@@ -4,12 +4,22 @@ import { NavLink } from 'react-router-dom'
 import styles from './Header.module.sass'
 
 function Header ({ currentUser }) {
-  const renderSignInOut = () => {
+  const handleSignOut = () => {
+    auth.signOut()
+  }
+
+  const renderSignInSignOut = () => {
     if (currentUser) {
+      const { email } = currentUser
+
       return (
-        <button className={styles.button} onClick={() => auth.signOut()}>
-          Sign Out
-        </button>
+        <>
+          <button className={styles.button} onClick={handleSignOut}>
+            Sign Out
+          </button>
+
+          <div className={styles.email}>{email}</div>
+        </>
       )
     }
     return (
@@ -30,7 +40,7 @@ function Header ({ currentUser }) {
           Shop
         </NavLink>
 
-        {renderSignInOut()}
+        {renderSignInSignOut()}
       </nav>
     </div>
   )
