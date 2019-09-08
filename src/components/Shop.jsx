@@ -12,9 +12,7 @@ class Shop extends Component {
   }
 
   render () {
-    return (
-      <CollectionsList collections={collections} />
-    )
+    return <CollectionsList collections={collections} />
   }
 }
 

@@ -21,3 +21,7 @@ provider.setCustomParameters({ prompt: 'select_account' })
 export function signInGoogle () {
   return auth.signInWithPopup(provider)
 }
+
+export function signOutGoogle () {
+  return auth.signOut()
+}

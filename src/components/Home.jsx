@@ -5,7 +5,6 @@ import sections from './sections'
 class Home extends Component {
   constructor () {
     super()
-
     this.state = {
       sections
     }
@@ -13,10 +12,7 @@ class Home extends Component {
 
   render () {
     const { sections } = this.state
-
-    return (
-      <SectionsList sections={sections} />
-    )
+    return <SectionsList sections={sections} />
   }
 }
 
