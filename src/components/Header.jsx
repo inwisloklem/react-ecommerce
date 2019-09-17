@@ -6,7 +6,8 @@ import styles from './Header.module.sass'
 function Header ({ currentUser }) {
   const renderSignInSignOut = () => {
     if (currentUser) {
-      const { email } = currentUser
+      const { email, uid } = currentUser
+      console.info(uid)
 
       return (
         <>
