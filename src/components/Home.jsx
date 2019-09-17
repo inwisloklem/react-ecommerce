@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import SectionsList from './SectionsList'
 import sections from './sections'
 
@@ -11,7 +11,7 @@ class Home extends Component {
   }
 
   render () {
-    const { sections } = this.state
+    const {sections} = this.state
     return <SectionsList sections={sections} />
   }
 }

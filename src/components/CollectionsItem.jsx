@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './CollectionsItem.module.sass'
 
-function CollectionsItem ({ image, name, price }) {
+function CollectionsItem ({image, name, price}) {
   return (
     <li className={styles.item}>
       <div className={styles.outer}>
         <div
           className={styles.image}
-          style={{ backgroundImage: `url(${image})` }}
+          style={{backgroundImage: `url(${image})`}}
         />
         <div className={styles.inner}>
           <button className={styles.button} type='button'>

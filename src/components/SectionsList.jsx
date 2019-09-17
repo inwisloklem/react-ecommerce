@@ -3,10 +3,10 @@ import SectionsItem from './SectionsItem'
 import PropTypes from 'prop-types'
 import styles from './SectionsList.module.sass'
 
-function SectionsList ({ sections }) {
+function SectionsList ({sections}) {
   return (
     <ul className={styles.list}>
-      {sections.map(({ id, ...otherProps }) => (
+      {sections.map(({id, ...otherProps}) => (
         <SectionsItem key={id} {...otherProps} />
       ))}
     </ul>

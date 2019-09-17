@@ -8,9 +8,7 @@ function Auth () {
   return (
     <div className={styles.inner}>
       <div className={classNames(styles.block, styles.blockLeft)}>
-        <h2 className={styles.title}>
-          I already have an account
-        </h2>
+        <h2 className={styles.title}>I already have an account</h2>
 
         <div className={styles.description}>
           Sign in with your email and password
@@ -20,9 +18,7 @@ function Auth () {
       </div>
 
       <div className={classNames(styles.block, styles.blockRight)}>
-        <h2 className={styles.title}>
-          I don't have an account
-        </h2>
+        <h2 className={styles.title}>I don't have an account</h2>
 
         <div className={styles.description}>
           Sign up with your email and password

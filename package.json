@@ -48,6 +48,12 @@
     "plugins": [
       "html"
     ],
+    "rules": {
+      "object-curly-spacing": [
+        "error",
+        "never"
+      ]
+    },
     "parser": "babel-eslint"
   },
   "scripts": {

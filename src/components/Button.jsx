@@ -5,14 +5,14 @@ import styles from './Button.module.sass'
 
 const validButtonTypes = ['button', 'reset', 'submit']
 
-function Button ({ children, isGoogle, type = 'button', ...otherProps }) {
+function Button ({children, isGoogle, type = 'button', ...otherProps}) {
   if (!validButtonTypes.includes(type)) {
     type = 'button'
   }
 
   return (
     <button
-      className={classNames(styles.button, { [styles.buttonGoogle]: isGoogle })}
+      className={classNames(styles.button, {[styles.buttonGoogle]: isGoogle})}
       type={type}
       {...otherProps}
     >

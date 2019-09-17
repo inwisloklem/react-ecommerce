@@ -16,7 +16,7 @@ export const auth = firebase.auth()
 export const store = firebase.firestore()
 
 const provider = new firebase.auth.GoogleAuthProvider()
-provider.setCustomParameters({ prompt: 'select_account' })
+provider.setCustomParameters({prompt: 'select_account'})
 
 export async function createUserProfileDocument (userAuth) {
   if (!userAuth) {
@@ -27,7 +27,7 @@ export async function createUserProfileDocument (userAuth) {
   const snapshot = await userRef.get()
 
   if (!snapshot.exists) {
-    const { displayName, email } = userAuth
+    const {displayName, email} = userAuth
 
     try {
       await userRef.set({

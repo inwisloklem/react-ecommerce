@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import React, {Component} from 'react'
+import {Route, Switch} from 'react-router-dom'
 import Header from './Header'
-import { auth, createUserProfileDocument } from '../firebase'
+import {auth, createUserProfileDocument} from '../firebase'
 import Auth from './Auth'
 import Home from './Home'
 import Shop from './Shop'
@@ -19,7 +19,7 @@ class Inner extends Component {
 
   componentDidMount () {
     this.unsubscribeAuth = auth.onAuthStateChanged(async userAuth => {
-      this.setState({ currentUser: userAuth })
+      this.setState({currentUser: userAuth})
       await createUserProfileDocument(userAuth)
     })
   }
@@ -29,7 +29,7 @@ class Inner extends Component {
   }
 
   render () {
-    const { currentUser } = this.state
+    const {currentUser} = this.state
 
     return (
       <main className={styles.component}>

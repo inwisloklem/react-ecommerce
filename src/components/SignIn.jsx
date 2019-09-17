@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { signInGoogle } from '../firebase'
+import React, {Component} from 'react'
+import {signInGoogle} from '../firebase'
 import Button from './Button'
 import styles from './SignIn.module.sass'
 
@@ -14,7 +14,7 @@ class SignIn extends Component {
     this.state = initialState
   }
 
-  handleChange = ({ target: { name, value } }) => {
+  handleChange = ({target: {name, value}}) => {
     this.setState({
       [name]: value
     })
@@ -26,7 +26,7 @@ class SignIn extends Component {
   }
 
   render () {
-    const { email, password } = this.state
+    const {email, password} = this.state
 
     return (
       <form onSubmit={this.handleSubmit}>

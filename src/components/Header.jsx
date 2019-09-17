@@ -1,12 +1,12 @@
 import React from 'react'
-import { signOutGoogle } from '../firebase'
-import { NavLink } from 'react-router-dom'
+import {signOutGoogle} from '../firebase'
+import {NavLink} from 'react-router-dom'
 import styles from './Header.module.sass'
 
-function Header ({ currentUser }) {
+function Header ({currentUser}) {
   const renderSignInSignOut = () => {
     if (currentUser) {
-      const { email, uid } = currentUser
+      const {email, uid} = currentUser
       console.info(uid)
 
       return (
